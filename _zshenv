@@ -38,7 +38,7 @@ else
 fi
 
 # Use Emacs as editor
-export EDITOR=emacsclient -t -a ''
+export EDITOR="emacsclient -t -a ''"
 
 # For use in Emacs (see variable: `user-mail-address')
 export EMAIL="builtinnya@gmail.com"

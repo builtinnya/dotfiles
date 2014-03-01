@@ -3,7 +3,7 @@
 # ======================================================================
 
 # Change the default oh-my-zsh url to my fork
-ANTIGEN_DEFAULT_REPO_URL=https://github.com/builtinnya/oh-my-zsh.git
+ANTIGEN_DEFAULT_REPO_URL="https://github.com/builtinnya/oh-my-zsh.git"
 
 # Load Antigen, a plugin manager for zsh
 source ${HOME}/.zsh.d/antigen/antigen.zsh
@@ -20,9 +20,9 @@ antigen bundle lein
 antigen bundle command-not-found
 antigen bundle python
 antigen bundle extract
-antgien bundle history
+antigen bundle history
 antigen bundle nyan
-antigen bundle emacs
+# antigen bundle emacs
 antigen bundle virtualenvwrapper
 
 # Syntax highlighting bundle
@@ -218,9 +218,9 @@ alias gl="git log"
 compdef _git gl=git-log
 alias gr="git reflog"
 compdef _git gr=git-reflog
-alias gll="git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit --date=relative"
+alias gll="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
 compdef _git gll=git-log
-alias glla="git log --all --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit --date=relative"
+alias glla="git log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
 alias gwc="git whatchanged -p --abbrev-commit --pretty=medium"
 
 ## Remote
