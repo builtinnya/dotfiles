@@ -251,6 +251,33 @@ alias ggru="git grep --untracked -i -I -n -P"
 ## Submodules
 alias gsm="git submodule"
 
+## Subtrees
+alias gsb="git subtree"
+
+function gsba() {
+  prefix="$1"
+  name=$(basename "$prefix")
+  branch="$2"
+  test -z "$branch" && branch="master"
+  git subtree add --prefix="$prefix" --squash "$name" "$branch"
+}
+
+function gsbp() {
+  prefix="$1"
+  name=$(basename "$prefix")
+  branch="$2"
+  test -z "$branch" && branch="master"
+  git subtree push --prefix="$prefix" --squash "$name" "$branch"
+}
+
+function gsbl() {
+  prefix="$1"
+  name=$(basename "$prefix")
+  branch="$2"
+  test -z "$branch" && branch="master"
+  git subtree pull --prefix="$prefix" --squash "$name" "$branch"
+}
+
 ## Will cd into the top of the current repository or submodule
 alias grt="cd $(git rev-parse --show-toplevel || echo ".")"
 

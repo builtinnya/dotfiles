@@ -134,6 +134,9 @@
     # Submodules
     sm = submodule
 
+    # Subtrees
+    sb = subtree
+
     # Stashing
     s = stash
     sk = stash --keep-index
