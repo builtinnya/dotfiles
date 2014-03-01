@@ -1,0 +1,290 @@
+# ======================================================================
+# Load oh-my-zsh and its plugins using Antigen
+# ======================================================================
+
+# Change the default oh-my-zsh url to my fork
+ANTIGEN_DEFAULT_REPO_URL=https://github.com/builtinnya/oh-my-zsh.git
+
+# Load Antigen, a plugin manager for zsh
+source ${HOME}/.zsh.d/antigen/antigen.zsh
+
+# Load the oh-my-zsh's library
+antigen use oh-my-zsh
+
+# Bundles from the default repo
+antigen bundle git
+antigen bundle git-flow
+antigen bundle heroku
+antigen bundle pip
+antigen bundle lein
+antigen bundle command-not-found
+antigen bundle python
+antigen bundle extract
+antgien bundle history
+antigen bundle nyan
+antigen bundle emacs
+antigen bundle virtualenvwrapper
+
+# Syntax highlighting bundle
+antigen bundle zsh-users/zsh-syntax-highlighting
+
+# Load my theme
+antigen theme nya
+
+# Tell antigen that you're done.
+antigen apply
+
+# ======================================================================
+# Sane the world
+# ======================================================================
+
+# Sane output of multi-byte characters
+setopt COMBINING_CHARS
+
+# For Emacs terminal directory/host/user tracking
+# Refer `term.el` for more information.
+if [[ $TERM == eterm-color ]]
+then
+    function eterm-set-cwd {
+        $@
+        echo -e "\033AnSiTc" $(pwd)
+    }
+
+    function eterm-reset {
+        echo -e "\033AnSiTu" $(whoami)
+        echo -e "\033AnSiTc" $(pwd)
+        echo -e "\033AnSiTh" $(hostname)
+    }
+
+    foreach cmd ( cd pushd popd )
+        alias $cmd="eterm-set-cwd $cmd"
+    end
+
+    foreach cmd ( ssh rlogin telnet rsh sh ksh csh tcsh zsh bash tcl su )
+        alias $cmd="eterm-reset"
+    end
+
+    eterm-reset
+fi
+
+# For TRAMP hangs (See: http://emacswiki.org/emacs/TrampMode)
+if [[ "$TERM" == "dumb" ]]
+then
+  unsetopt zle
+  unsetopt prompt_cr
+  unsetopt prompt_subst
+  unfunction precmd
+  unfunction preexec
+  PS1='$ '
+fi
+
+# For enhanced Emacs color
+export TERM=xterm-256color
+
+# Start tmux on every shell login
+if which tmux 2>&1 >/dev/null
+then
+    # If not inside a tmux session, and if no session is started, start a new session
+    test -z "$TMUX" && (tmux attach || tmux new-session)
+fi
+
+# Initialize pyenv
+which pyenv > /dev/null && eval "$(pyenv init -)"
+
+# Enable virtualenvwrapper
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/Devel
+export VIRTUAL_ENV_DISABLE_PROMPT=yes
+source /usr/local/bin/virtualenvwrapper.sh
+
+# ======================================================================
+# Aliases
+# ======================================================================
+
+# Emacs
+alias e="emacsclient -n -a ''"
+alias et="emacsclient -t -a ''"
+alias es="emacs --daemon"
+
+# Config
+alias zshconfig="e ~/.zshrc"
+alias gitconfig="e ~/.gitconfig"
+alias tmuxconfig="e ~/.tmux.conf"
+
+# Sublime Text
+alias s="subl"
+
+# Tmux
+alias t="tmux"
+
+# Pager
+alias m="most"
+
+# Ag
+alias a="ag"
+
+# Bower
+alias bower="noglob bower"
+
+# Git
+alias g="git"
+compdef g=git
+
+## Add an alias
+alias gaa="git alias"
+## Show all aliases which start with the given string
+alias ga="git aliases"
+
+## Show status
+alias gst="git status -s -b"
+compdef _git gst=git-status
+
+## Staging
+alias gad="git add"
+compdef _git ga=git-add
+alias gap="git add --patch"
+compdef _git gap=git-add
+alias gau="git rm --cached --"
+compdef _git gau=git-rm
+
+## Committing
+alias gci="git commit -v"
+compdef _git gc=git-commit
+alias gca="git commit -v -a"
+compdef _git gca=git-commit
+alias gcam="git commit -v -a --amend"
+compdef _git gcam=git-commit
+alias gcu="git reset --soft HEAD^"
+compdef _git gcu=git-reset
+
+## Merging
+alias gm="git merge --no-ff"
+compdef _git gm=git-merge
+alias gmff="git merge --ff-only"
+compdef _git gmff=git-merge
+
+## Fetching
+alias gf="git fetch"
+compdef _git gf=git-fetch
+alias gft="git fetch --tags"
+compdef _git gft=git-fetch
+alias gfp="git fetch --prune"
+compdef _git gft=git-fetch
+
+## Pushing
+alias gp="git push"
+compdef _git gp=git-push
+alias gpoat="git push origin --all && git push origin --tags"
+
+## Branching
+alias gb="git branch -v"
+compdef _git gb=git-branch
+alias gba="git branch -v -a"
+compdef _git gba=git-branch
+alias gbr="git branch -v -r"
+compdef _git gbr=git-branch
+alias gbm="git branch -v --merged"
+compdef _git gbm=git-branch
+alias gbn="git branch -v --no-merged"
+compdef _git gbn=git-branch
+
+## Checkout
+alias gco="git checkout"
+compdef _git gco=git-checkout
+alias gcb="git checkout -b"
+alias gcm="git checkout master"
+alias gcd="git checkout develop"
+
+## Rebasing
+# alias grb="git rebase"
+# alias grbc="git rebase --continue"
+# alias grba="git rebase --abort"
+# alias grbs="git rebase --skip"
+# alias grbi="git rebase --interactive"
+
+## Resetting
+# alias grst="git reset"
+# alias grsh="git reset --hard HEAD"
+# alias grsm="git reset --merge ORIG_HEAD"
+# alias grss="git reset --soft HEAD^"
+
+## Diff
+alias gdf="git diff"
+gdv() { git diff -w "$@" | view - }
+compdef _git gdv=git-diff
+
+## Log
+alias gl="git log"
+compdef _git gl=git-log
+alias gr="git reflog"
+compdef _git gr=git-reflog
+alias gll="git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit --date=relative"
+compdef _git gll=git-log
+alias glla="git log --all --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit --date=relative"
+alias gwc="git whatchanged -p --abbrev-commit --pretty=medium"
+
+## Remote
+alias gr="git remote"
+compdef _git gr=git-remote
+alias grv="git remote -v"
+compdef _git grv=git-remote
+alias grmv="git remote rename"
+compdef _git grmv=git-remote
+alias grrm="git remote remove"
+compdef _git grrm=git-remote
+alias grset="git remote set-url"
+compdef _git grset=git-remote
+alias grup="git remote update"
+compdef _git grset=git-remote
+
+## Project management
+alias gls="git shortlog -n --no-merges"
+alias glss="git shortlog -s -n --no-merges"
+alias gcp="git cherry-pick"
+compdef _git gcp=git-cherry-pick
+
+## Searching
+alias ggr="git grep -i -I -n -P"
+alias ggri="git grep --cached -i -I -n -P"
+alias ggru="git grep --untracked -i -I -n -P"
+
+## Submodules
+alias gsm="git submodule"
+
+## Will cd into the top of the current repository or submodule
+alias grt="cd $(git rev-parse --show-toplevel || echo ".")"
+
+## Git and svn mix
+alias git-svn-dcommit-push="git svn dcommit && git push github master:svntrunk"
+compdef git-svn-dcommit-push=git
+
+alias gsr="git svn rebase"
+alias gsd="git svn dcommit"
+
+#
+# Will return the current branch name
+# Usage example: git pull origin $(current_branch)
+#
+function current_branch() {
+  ref=$(git symbolic-ref HEAD 2> /dev/null) || \
+  ref=$(git rev-parse --short HEAD 2> /dev/null) || return
+  echo ${ref#refs/heads/}
+}
+
+function current_repository() {
+  ref=$(git symbolic-ref HEAD 2> /dev/null) || \
+  ref=$(git rev-parse --short HEAD 2> /dev/null) || return
+  echo $(git remote -v | cut -d":" -f 2)
+}
+
+# these aliases take advantage of the previous function
+alias ggpull="git pull origin $(current_branch)"
+compdef ggpull=git
+alias ggpush="git push origin $(current_branch)"
+compdef ggpush=git
+alias ggpnp="git pull origin $(current_branch) && git push origin $(current_branch)"
+compdef ggpnp=git
+
+# ======================================================================
+# Load OS-specific settings
+# ======================================================================

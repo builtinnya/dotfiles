@@ -1,0 +1,151 @@
+[user]
+    name = Naoto Yokoyama
+    email = builtinnya@gmail.com
+
+[core]
+    editor = emacsclient -t -a ''
+    pager = most
+
+[push]
+    default = matching
+
+[merge]
+    tool = emerge
+
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+    grep = auto
+    interactive = auto
+    ui = auto
+
+[alias]
+    # Aliases
+
+    ## Add an alias
+    alias = "!sh -c '[ $# = 2 ] && git config --global alias.\"$1\" \"$2\" && exit 0 || echo \"usage: git alias <new alias> <original command>\" >&2 && exit 1' -"
+    ## Show all aliases which start with the given string
+    aliases = "!sh -c \"git config --get-regexp 'alias.*' | colrm 1 6 | sed 's/[ ]/ = /' | grep -e '^$1' \" -"
+    a = "!sh -c \"git config --get-regexp 'alias.*' | colrm 1 6 | sed 's/[ ]/ = /' | grep -e '^$1' \" -"
+
+    # Show status
+    st = status -s -b
+
+    # Staging
+    ad = add
+    ap = add --patch
+    au = rm --cached --
+    unstage = rm --cached --
+
+    # Committing
+    ci = commit -v
+    ca = commit -a -v
+    cam = commit -a -v --amend
+    cu = reset --soft HEAD^
+
+    # Merging
+    m = merge --no-ff
+    mff = merge --ff-only
+
+    # Fetching
+    f = fetch
+    ft = fetch --tags
+    fp = fetch --prune
+
+    # Pushing
+    p = push
+    pt = push --tags
+    pu = push --set-upstream
+    po = push origin
+    pot = push --tags origin
+    pou = push --set-upstream origin
+
+    # Branching
+    b = branch -v
+    ba = branch -v -a
+    br = branch -v -r
+    bm = branch -v --merged
+    bn = branch -v --no-merged
+    prune-all = !git remote | xargs -n 1 git remote prune
+
+    # Checkout
+    co = checkout
+    cb = checkout -b
+    cm = checkout master
+    cd = checkout develop
+
+    # Rebasing
+    rb = rebase
+    rbc = rebase --continue
+    rba = rebase --abort
+    rbs = rebase --skip
+    rbi = rebase --interactive
+
+    # Resetting
+    rst = reset
+    rsh = reset --hard HEAD
+    rso = reset --merge ORIG_HEAD
+    rsm = reset --merge ORIG_HEAD
+    rss = reset --soft HEAD^
+
+    # Diff
+    df = diff
+    dh = diff HEAD^
+    dc = diff --cached
+    di = diff --cached
+    ds = diff --stat
+    dsc = diff --stat --cached
+    dsi = diff --stat --cached
+    dw = diff --color-words
+    dd = diff --dirstat=cumulative
+    dff = "!bash -c 'git diff $(git merge-base "$1" "$2") "$2" "${@: 3}" ' -"
+
+    # Log
+    l = log
+    r = reflog
+    rl = reflog
+    sh = show
+    lp = log -p
+    lg = log -g
+    lm = log --stat
+    ll = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    lla = log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    ld = log --graph --decorate --pretty=format:'%C(yellow)%h %Creset%ci %C(green)%cn %Creset%s'
+    lda = log --all --graph --decorate --pretty=format:'%C(yellow)%h %Creset%ci %C(green)%cn %Creset%s'
+    lol = log --graph --decorate --pretty=oneline --abbrev-commit
+    lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+
+    # Project management
+    dsc = describe
+    arc = archive
+    cp = cherry-pick
+    ls = shortlog -n --no-merges
+    lss = shortlog -n -s --no-merges
+    whois = "!sh -c 'git log -i -1 --pretty=\"format:%an <%ae>\n\" --author=\"$1\"' -"
+    whatis = show -s --pretty='tformat:%h (%s, %ad)' --date=short
+
+    # Searching
+    gr = grep -i -I -n -P
+    gri = grep --cached -i -I -n -P
+    grc = grep --cached -i -I -n -P
+    gru = grep --untracked -i -I -n -P
+
+    # Submodules
+    sm = submodule
+
+    # Stashing
+    s = stash
+    sk = stash --keep-index
+    ss = stash show
+    sp = stash pop
+    sa = stash apply
+    sl = stash list
+
+    # Maintenance and data recovery
+    lsf = ls-files
+    lst = ls-tree
+    cat = cat-file
+    check = fsck --full
+    objs = rev-list --all --objects --oneline
+    count = count-objects -v

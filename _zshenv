@@ -1,0 +1,55 @@
+# Don't allow duplication
+typeset -U path
+
+# (N-/): don't register directories which do not exist
+path=(
+    $HOME/.cask/bin(N-/)
+    /usr/local/texlive/2013/bin/x86_64-darwin(N-/)
+    $HOME/texlive/2011/bin/x86_64-linux(N-/)
+    $HOME/bin(N-/)
+    /usr/lib/lightdm/lightdm(N-/)
+    /usr/local/sbin(N-/)
+    /usr/local/bin(N-/)
+    /usr/sbin(N-/)
+    /usr/bin(N-/)
+    /sbin(N-/)
+    /bin(N-/)
+    /usr/games(N-/)
+    $HOME/Sources/depot_tools(N-/)
+)
+
+# Don't allow duplication
+typeset -U manpath
+
+# (N-/): don't register directories which do not exist
+manpath=(
+    $HOME/local/share/man(N-/)
+    /usr/local/share/man(N-/)
+    /usr/share/man(N-/)
+)
+
+# Use most as pager, otherwise use less.
+if which most > /dev/null 2>&1; then
+    export PAGER="most"
+    export MANPAGER="most"
+else
+    export PAGER="less"
+    export MANPAGER="less"
+fi
+
+# Use Emacs as editor
+export EDITOR=emacsclient -t -a ''
+
+# For use in Emacs (see variable: `user-mail-address')
+export EMAIL="builtinnya@gmail.com"
+
+# The basic language settings used by applications
+export LANG="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
+
+# Enable pythonbrew
+# [[ -s $HOME/.pythonbrew/etc/bashrc ]] && source $HOME/.pythonbrew/etc/bashrc
+
+# Enable ocamlbrew
+[[ -s /Users/nya/.ocamlbrew/ocaml-4.00.1/etc/ocamlbrew.bashrc ]] && \
+    source /Users/nya/.ocamlbrew/ocaml-4.00.1/etc/ocamlbrew.bashrc
