@@ -103,6 +103,7 @@ source /usr/local/bin/virtualenvwrapper.sh
 
 # Emacs
 alias e="emacsclient -n -a ''"
+alias ec="emacsclient -n -a '' -c"
 alias et="emacsclient -t -a ''"
 alias es="emacs --daemon"
 
@@ -313,5 +314,22 @@ alias ggpnp="git pull origin $(current_branch) && git push origin $(current_bran
 compdef ggpnp=git
 
 # ======================================================================
+# Functions
+# ======================================================================
+
+# Reload config
+function reload() {
+  source $HOME/.zshrc
+}
+
+# ======================================================================
 # Load OS-specific settings
 # ======================================================================
+case ${OSTYPE} in
+    darwin*)
+        source $HOME/.zsh.d/osx.zsh
+        ;;
+    linux*)
+        source $HOME/.zsh.d/linux.zsh
+        ;;
+esac
