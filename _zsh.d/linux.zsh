@@ -5,8 +5,10 @@
 # ======================================================================
 # Aliases
 # ======================================================================
-apt="aptitude"
-au="sudo aptitude update"
-aug="sudo aptitude update && sudo aptitude upgrade"
-ai="sudo aptitude install"
-af="sudo aptitude update && aptitude search"
+
+# Aptitude
+alias apt="aptitude"
+alias au="sudo aptitude update"
+alias aug="sudo aptitude update && sudo aptitude upgrade"
+alias ai="sudo aptitude install"
+alias af="sudo aptitude update && aptitude search"
