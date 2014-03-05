@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: ns
+# key: ns
+# expand-env: ((yas-indent-line 'fixed))
+# --
+(ns $1
+  "$2"
+  $3)
+$0
