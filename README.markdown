@@ -68,3 +68,11 @@ On Mac OS X, I use [iTerm2][] with Zenburn color scheme from
 [iTerm2-Color-Schemes]: https://github.com/mbadolato/iTerm2-Color-Schemes
 
 ### .emacs.d
+Settings for [GNU Emacs][], an extensible, customizable text editor -- and more.
+Maintained in [separate repo][.emacs.d].
+
+[GNU Emacs]: http://www.gnu.org/software/emacs/
+  "GNU Emacs - GNU Project - Free Software Foundation (FSF)"
+
+[.emacs.d]: https://github.com/builtinnya/.emacs.d
+  "builtinnya/.emacs.d"
