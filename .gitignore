@@ -1,0 +1,4 @@
+*.elc
+/.cask
+/savefiles
+!/savefiles/.gitkeep
