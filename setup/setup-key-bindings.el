@@ -42,6 +42,9 @@
 ;; Multiple cursors: add the next matching part
 (global-set-key (kbd "s-d") 'mc/mark-next-like-this)
 
+;; Multiple cursors: skip the next matching part
+(global-set-key (kbd "s-S") 'mc/skip-to-next-like-this)
+
 ;; Multiple cursors: add all matching parts
 (global-set-key (kbd "s-D") 'mc/mark-all-like-this)
 
