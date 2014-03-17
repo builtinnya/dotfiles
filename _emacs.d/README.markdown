@@ -51,6 +51,13 @@ $ brew install emacs --use-git-head --cocoa --srgb
 $ git clone git@github.com:builtinnya/.emacs.d.git ~/.emacs.d
 ```
 
+3. Install Emacs lisp packages using Cask:
+
+```bash
+$ cd ~/.emacs.d
+$ cask install
+```
+
 ## Structure
 
 - `.emacs.d/`
