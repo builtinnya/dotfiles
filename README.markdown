@@ -47,16 +47,15 @@ $ brew install emacs --use-git-head --cocoa --srgb
 1. Install [Cask](http://cask.github.io/), a package dependency manager for Emacs.
 2. Clone this repository to ``~/.emacs.d``:
 
-```bash
-$ git clone git@github.com:builtinnya/.emacs.d.git ~/.emacs.d
-```
-
+    ```bash
+    $ git clone git@github.com:builtinnya/.emacs.d.git ~/.emacs.d
+    ```
 3. Install Emacs lisp packages using Cask:
 
-```bash
-$ cd ~/.emacs.d
-$ cask install
-```
+    ```bash
+    $ cd ~/.emacs.d
+    $ cask install
+    ```
 
 ## Structure
 
@@ -80,17 +79,18 @@ or to use your own fork.
 I prefer to use [Git Subtrees][]. Here is how to do it.
 
 - Adding a library to `vendor/`
+
     ```bash
     $ git remote add some-library git-url-of-some-library
     $ git subtree add --prefix=vendor/some-library --squash some-library master
     ```
-
 - Pulling changes from upstream
+
     ```bash
     $ git subtree pull --prefix=vendor/some-library --squash some-library master
     ```
-
 - Contributing back to upstream
+
     ```bash
     $ git subtree push --prefix=vendor/some-library some-library master
     ```
