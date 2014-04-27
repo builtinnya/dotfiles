@@ -36,6 +36,7 @@
 (depends-on "git-rebase-mode")
 (depends-on "gitconfig-mode")
 (depends-on "gitignore-mode")
+(depends-on "gnuplot-mode")
 (depends-on "google-c-style")
 (depends-on "helm")
 (depends-on "helm-github-stars")

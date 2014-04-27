@@ -19,4 +19,4 @@
   (add-to-list 'flymake-allowed-file-name-masks
                '("\\.py\\'" flymake-pylint-init)))
 
-(require 'setup-python)
+(provide 'setup-python)
