@@ -116,6 +116,9 @@
 ;; Set up Java development environment
 (require 'setup-java)
 
+;; Set up Python development environment
+(require 'setup-python)
+
 ;; Set up JavaScript development environment
 (require 'setup-js)
 
