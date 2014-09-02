@@ -11,6 +11,9 @@
 (add-hook 'cider-repl-mode-hook 'smartparens-strict-mode)
 (add-hook 'cider-repl-mode-hook 'rainbow-delimiters-mode)
 
+(setq nrepl-hide-special-buffers t)
+(setq nrepl-buffer-name-show-port t)
+
 (require 'clojure-mode)
 
 ;; Prettify lambdas
