@@ -3,8 +3,11 @@
 
 (setq mc/cmds-to-run-for-all
       '(
+        beginning-of-visual-line
         c-electric-delete-forward
+        end-of-visual-line
         sp--self-insert-command
+        sp-forward-slurp-sexp
         yas-expand
         ))
 

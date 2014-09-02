@@ -24,4 +24,8 @@
                                                (match-end 1) "ƒ")
                                nil))))))
 
+;; Fix indentation for some forms
+(dolist (name '(save-view view-server-fns bulk-update))
+  (put-clojure-indent name 1))
+
 (provide 'setup-lisp)
