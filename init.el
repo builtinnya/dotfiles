@@ -128,6 +128,9 @@
 ;; Set up Lisp development environment
 (require 'setup-lisp)
 
+;; Set up Go development environment
+(require 'setup-go)
+
 ;; Set up expand-region, semantic region expander
 (require 'setup-expand-region)
 
