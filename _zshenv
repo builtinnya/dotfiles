@@ -3,6 +3,7 @@ typeset -U path
 
 # (N-/): don't register directories which do not exist
 path=(
+    $HOME/go/bin(N-/)
     $HOME/.cask/bin(N-/)
     $HOME/.local/bin(N-/)
     /usr/local/texlive/2013/bin/x86_64-darwin(N-/)
