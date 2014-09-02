@@ -97,6 +97,9 @@ export PROJECT_HOME=$HOME/Devel
 export VIRTUAL_ENV_DISABLE_PROMPT=yes
 source /usr/local/bin/virtualenvwrapper.sh
 
+# Go
+export GOPATH=$HOME/go
+
 # ======================================================================
 # Aliases
 # ======================================================================
