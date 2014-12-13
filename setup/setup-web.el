@@ -17,6 +17,11 @@
             ;; Cursor will be positioned between first empty quotes
             (setq emmet-move-cursor-between-quotes t)))
 
+(add-hook 'css-mode-hook
+          (lambda ()
+            ;; Set default indent offset to 2
+            (setq css-indent-offset 2)))
+
 ;; Display color strings as colors
 (add-hook 'css-mode-hook 'rainbow-mode)
 
