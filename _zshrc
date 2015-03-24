@@ -119,7 +119,7 @@ alias gitconfig="e ~/.gitconfig"
 alias tmuxconfig="e ~/.tmux.conf"
 
 # Sublime Text
-alias s="subl"
+# alias s="subl"
 
 # Tmux
 alias t="tmux"

@@ -3,6 +3,7 @@ typeset -U path
 
 # (N-/): don't register directories which do not exist
 path=(
+    $HOME/.cabal/bin(N-/)
     $HOME/go/bin(N-/)
     $HOME/.cask/bin(N-/)
     $HOME/.local/bin(N-/)
