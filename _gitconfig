@@ -1,6 +1,7 @@
 [user]
     name = Naoto Yokoyama
     email = builtinnya@gmail.com
+    signingkey = F44AF9F4
 
 [core]
     editor = emacsclient -t -a ''
