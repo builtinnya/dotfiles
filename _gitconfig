@@ -103,7 +103,7 @@
     dff = "!bash -c 'git diff $(git merge-base "$1" "$2") "$2" "${@: 3}" ' -"
 
     # Log
-    l = log
+    l = log --show-signature
     r = reflog
     rl = reflog
     sh = show
