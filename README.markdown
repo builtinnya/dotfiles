@@ -71,6 +71,12 @@ On Mac OS X, I use [iTerm2][] with Zenburn color scheme from
 Settings for [GNU Emacs][], an extensible, customizable text editor -- and more.
 Maintained in [separate repo][.emacs.d].
 
+To pull changes from [.emacs.d][]:
+
+```bash
+git subtree pull --prefix=_emacs.d --squash _emacs.d master
+```
+
 [GNU Emacs]: http://www.gnu.org/software/emacs/
   "GNU Emacs - GNU Project - Free Software Foundation (FSF)"
 
