@@ -6,12 +6,16 @@
         beginning-of-visual-line
         c-electric-delete-forward
         end-of-visual-line
+        markdown-shifttab
         sp--self-insert-command
         sp-forward-slurp-sexp
+        wdired-finish-edit
         yas-expand
         ))
 
 (setq mc/cmds-to-run-once
       '(
         dired-unmark-backward
+        markdown-exdent-or-delete
+        read-only-mode
         ))

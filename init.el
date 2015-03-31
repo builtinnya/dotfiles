@@ -128,6 +128,9 @@
 ;; Set up Lisp development environment
 (require 'setup-lisp)
 
+;; Set up Haskell development environment
+(require 'setup-haskell)
+
 ;; Set up Go development environment
 (require 'setup-go)
 
