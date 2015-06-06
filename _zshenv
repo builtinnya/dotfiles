@@ -57,6 +57,9 @@ export LC_ALL="en_US.UTF-8"
 [[ -s /Users/nya/.ocamlbrew/ocaml-4.00.1/etc/ocamlbrew.bashrc ]] && \
     source /Users/nya/.ocamlbrew/ocaml-4.00.1/etc/ocamlbrew.bashrc
 
+# Enable rbenv, Ruby environment manager
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
 # Export variables for Boot2Docker
 export DOCKER_HOST=tcp://192.168.59.103:2376
 export DOCKER_CERT_PATH=~/.boot2docker/certs/boot2docker-vm
