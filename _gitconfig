@@ -153,3 +153,8 @@
     check = fsck --full
     objs = rev-list --all --objects --oneline
     count = count-objects -v
+
+[filter "lfs"]
+    required = true
+    clean = git-lfs clean %f
+    smudge = git-lfs smudge %f
