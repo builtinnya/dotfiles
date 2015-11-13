@@ -1,5 +1,11 @@
 ;;; GNU Emacs initialization entry point
 
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
+;; (package-initialize)
+
 ;; Cask - Emacs dependency manager
 (require 'cask "~/.cask/cask.el")
 (cask-initialize)
@@ -119,8 +125,14 @@
 ;; Set up Python development environment
 (require 'setup-python)
 
+;; Set up Ruby development environment
+(require 'setup-ruby)
+
 ;; Set up JavaScript development environment
 (require 'setup-js)
+
+;; Set up CoffeeScript development environment
+(require 'setup-coffee)
 
 ;; Set up web development environment
 (require 'setup-web)
