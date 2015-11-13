@@ -4,6 +4,8 @@
 (require 'web-mode)
 ;; (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 
+(setq web-mode-content-types-alist '())
+
 (add-hook 'web-mode-hook
           (lambda ()
             ;; Set indent offsets to 2
@@ -32,16 +34,9 @@
 ;; Display color strings as colors
 (add-hook 'css-mode-hook 'rainbow-mode)
 
-;; Setup for JSX
-(add-to-list 'auto-mode-alist '("\\.jsx$" . web-mode))
-
-(defadvice web-mode-highlight-part (around tweak-jsx activate)
-  (if (equal web-mode-content-type "jsx")
-      (let ((web-mode-enable-part-face nil))
-        ad-do-it)
-    ad-do-it))
-
-(provide 'setup-web)
+;; Setup for JS and JSX
+(add-to-list 'auto-mode-alist '("\\.js[x]?\\'" . web-mode))
+(add-to-list 'web-mode-content-types-alist '("jsx" . "\\.js[x]?\\'"))
 
 ;; Setup for SCSS
 (add-to-list 'auto-mode-alist '("\\.scss$" . web-mode))
@@ -50,6 +45,15 @@
 (add-to-list 'auto-mode-alist '("\\.json$" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.jshintrc$" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.jscsrc$" . web-mode))
-(setq web-mode-content-types-alist
-      '(("json" . "\\.jshintrc$")
-        ("json" . "\\.jscsrc$")))
+(add-to-list 'auto-mode-alist '("\\.eslintrc$" . web-mode))
+(add-to-list 'web-mode-content-types-alist '("json" . "\\.jshintrc$"))
+(add-to-list 'web-mode-content-types-alist '("json" . "\\.jscsrc$"))
+(add-to-list 'web-mode-content-types-alist '("json" . "\\.eslintrc$"))
+
+;; Setup for Embedded Ruby
+(add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
+
+;; Setup for Embedded Javascript
+(add-to-list 'auto-mode-alist '("\\.ejs\\'" . web-mode))
+
+(provide 'setup-web)

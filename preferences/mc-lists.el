@@ -16,6 +16,7 @@
 (setq mc/cmds-to-run-once
       '(
         dired-unmark-backward
+        haskell-indentation-delete-backward-char
         markdown-exdent-or-delete
         read-only-mode
         ))
