@@ -19,6 +19,7 @@ path=(
     /bin(N-/)
     /usr/games(N-/)
     $HOME/Sources/depot_tools(N-/)
+    $HOME/Library/Android/sdk/platform-tools
 )
 
 # Don't allow duplication
