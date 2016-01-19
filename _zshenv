@@ -1,6 +1,9 @@
 # Don't allow duplication
 typeset -U path
 
+# Disallow global settings to avoid PATH to be written by /etc/zprofile
+setopt no_global_rcs
+
 # (N-/): don't register directories which do not exist
 path=(
     $HOME/.cabal/bin(N-/)
