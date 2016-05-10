@@ -23,6 +23,7 @@ path=(
     /usr/games(N-/)
     $HOME/Sources/depot_tools(N-/)
     $HOME/Library/Android/sdk/platform-tools
+    $HOME/phalcon-tools(N-/)
 )
 
 # Don't allow duplication
@@ -71,3 +72,6 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 export DOCKER_HOST=tcp://192.168.59.103:2376
 export DOCKER_CERT_PATH=~/.boot2docker/certs/boot2docker-vm
 export DOCKER_TLS_VERIFY=1
+
+# For Phalcon Developer Tools
+export PTOOLSPATH=$HOME/phalcon-tools
