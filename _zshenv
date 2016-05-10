@@ -61,6 +61,9 @@ export LC_ALL="en_US.UTF-8"
 [[ -s /Users/nya/.ocamlbrew/ocaml-4.00.1/etc/ocamlbrew.bashrc ]] && \
     source /Users/nya/.ocamlbrew/ocaml-4.00.1/etc/ocamlbrew.bashrc
 
+# Enable phpbrew
+[[ -s "$HOME/.phpbrew/bashrc" ]] && source "$HOME/.phpbrew/bashrc"
+
 # Enable rbenv, Ruby environment manager
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
