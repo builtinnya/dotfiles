@@ -98,7 +98,7 @@ export VIRTUAL_ENV_DISABLE_PROMPT=yes
 source /usr/local/bin/virtualenvwrapper.sh
 
 # Go
-export GOPATH=$HOME/go
+# export GOPATH=$HOME/go
 
 # Initialize jenv
 if which jenv > /dev/null; then eval "$(jenv init -)"; fi
