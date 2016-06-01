@@ -68,6 +68,9 @@ export LC_ALL="en_US.UTF-8"
 # Enable rbenv, Ruby environment manager
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
+# Enable Go Version Manager
+[[ -s "/Users/nya/.gvm/scripts/gvm" ]] && source "/Users/nya/.gvm/scripts/gvm"
+
 # Export variables for Boot2Docker
 # export DOCKER_HOST=tcp://192.168.59.103:2376
 # export DOCKER_CERT_PATH=~/.boot2docker/certs/boot2docker-vm
