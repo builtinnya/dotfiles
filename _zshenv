@@ -24,6 +24,7 @@ path=(
     $HOME/Sources/depot_tools(N-/)
     $HOME/Library/Android/sdk/platform-tools
     $HOME/phalcon-tools(N-/)
+    /usr/local/opt/gnupg/libexec/gpgbin(N-/)
 )
 
 # Don't allow duplication
