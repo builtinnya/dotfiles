@@ -79,3 +79,8 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 # For Phalcon Developer Tools
 export PTOOLSPATH=$HOME/phalcon-tools
+
+# See `brew info openssl` for detail
+export LDFLAGS=-L/usr/local/opt/openssl/lib
+export CPPFLAGS=-I/usr/local/opt/openssl/include
+export PKG_CONFIG_PATH=/usr/local/opt/openssl/lib/pkgconfig
