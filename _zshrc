@@ -319,6 +319,9 @@ compdef ggpush=git
 alias ggpnp="git pull origin $(current_branch) && git push origin $(current_branch)"
 compdef ggpnp=git
 
+# Docker
+alias diclean='docker rmi -f $(docker images | grep "<none>" | tr -s " " | cut -d " " -f 3)'
+
 # ======================================================================
 # Functions
 # ======================================================================
