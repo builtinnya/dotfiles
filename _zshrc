@@ -322,6 +322,11 @@ compdef ggpnp=git
 # Docker
 alias diclean='docker rmi -f $(docker images | grep "<none>" | tr -s " " | cut -d " " -f 3)'
 
+# Chrome
+alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
+alias chrome-canary="/Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary"
+alias chromium="/Applications/Chromium.app/Contents/MacOS/Chromium"
+
 # ======================================================================
 # Functions
 # ======================================================================
