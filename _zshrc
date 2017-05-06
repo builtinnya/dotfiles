@@ -347,6 +347,11 @@ function dotenv() {
   unset DOTENV_SHELL_LOADER_SAVED_OPTS
 }
 
+# Fetch GitHub Pull Request
+function gpr() {
+  git fetch origin pull/$1/head:pr-$1
+}
+
 # ======================================================================
 # Load OS-specific settings
 # ======================================================================
