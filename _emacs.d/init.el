@@ -155,6 +155,9 @@
 ;; Set up sh-mode
 (require 'setup-sh)
 
+;; Set up asm-mode
+(require 'setup-asm)
+
 ;; Set up Git-related things
 (require 'setup-git)
 
