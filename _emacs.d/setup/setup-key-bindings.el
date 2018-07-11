@@ -35,12 +35,12 @@
 ;; Do the silver search on the current project
 (global-set-key (kbd "s-f") 'ag-project)
 
-;; Move to Flycheck errorss
+;; Move to Flycheck errors
 (global-set-key (kbd "C-c C-n") 'flycheck-tip-cycle)
 (global-set-key (kbd "C-c C-p") 'flycheck-tip-cycle-reverse)
 
 ;; Multiple cursors: add the next matching part
-(global-set-key (kbd "s-d") 'mc/mark-next-like-this)
+(global-set-key (kbd "M-+") 'mc/mark-next-like-this)
 
 ;; Multiple cursors: skip the next matching part
 (global-set-key (kbd "s-S") 'mc/skip-to-next-like-this)
@@ -80,5 +80,8 @@
 
 ;; Run Magit
 (global-set-key (kbd "C-c m") 'magit-status)
+
+;; Toggle input method
+(global-set-key (kbd "<zenkaku-hankaku>") 'toggle-input-method)
 
 (provide 'setup-key-bindings)
