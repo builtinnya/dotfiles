@@ -13,7 +13,8 @@
 
 ;; Use Ido (almost) everywhere
 (require 'ido-ubiquitous)
-(ido-ubiquitous-initialize)
+
+;; (ido-ubiquitous-initialize)
 (ido-ubiquitous-mode +1)
 
 ;; Save the ido state in `savefiles-dir'
