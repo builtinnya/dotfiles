@@ -161,5 +161,8 @@
 ;; Set up Eshell, The Emacs Shell
 (require 'setup-eshell)
 
+;; Set up mozc-mode
+(require 'setup-mozc)
+
 ;; Set up key-bindings
 (require 'setup-key-bindings)
