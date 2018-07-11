@@ -8,4 +8,7 @@
 (require 'magit-gitflow)
 (add-hook 'magit-mode-hook 'turn-on-magit-gitflow)
 
+;; Add Japanese password prompt
+(add-to-list 'magit-process-password-prompt-regexps "^パスフレーズを入力: ?$")
+
 (provide 'setup-git)
