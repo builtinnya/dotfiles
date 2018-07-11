@@ -5,8 +5,9 @@
 
 ;; Load configuration for (La)Tex based modes
 (require 'smartparens-latex)
+
 ;; Treat the $$ math blocks as sexps
-(add-to-list 'sp-navigate-consider-stringlike-sexp 'latex-mode)
+;; (add-to-list 'sp-navigate-consider-stringlike-sexp 'latex-mode)
 
 ;; Highlight matching pairs
 (show-smartparens-global-mode t)
