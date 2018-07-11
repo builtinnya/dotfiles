@@ -6,6 +6,7 @@ setopt no_global_rcs
 
 # (N-/): don't register directories which do not exist
 path=(
+    $HOME/.local/bin(N-/)
     $HOME/.cabal/bin(N-/)
     $HOME/go/bin(N-/)
     $HOME/.cask/bin(N-/)
