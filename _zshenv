@@ -74,6 +74,7 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 [[ -s "/Users/nya/.gvm/scripts/gvm" ]] && source "/Users/nya/.gvm/scripts/gvm"
 
 # Initialize asdf
+autoload -Uz compinit && compinit
 . $HOME/.asdf/asdf.sh
 . $HOME/.asdf/completions/asdf.bash
 
