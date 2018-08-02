@@ -12,7 +12,7 @@
 (setq ido-everywhere t)
 
 ;; Use Ido (almost) everywhere
-(require 'ido-ubiquitous)
+(require 'ido-completing-read+)
 
 ;; (ido-ubiquitous-initialize)
 (ido-ubiquitous-mode +1)

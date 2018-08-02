@@ -1,6 +1,5 @@
 ;;; Set up workgroups2 - a session manager for Emacs
 
-(add-vendor-to-load-path "workgroups2/src")
 (require 'workgroups2)
 
 ;; autoload/autosave:
