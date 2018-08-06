@@ -2,15 +2,13 @@
 
 (require 'workgroups2)
 
-;; autoload/autosave:
-;; if you start Emacs as "emacs --daemon" - turn off autoloading of workgroups:
-(setq wg-use-default-session-file nil)
+(setq wg-session-load-on-start t)
 
 ;; Set the prefix key
 (setq wg-prefix-key (kbd "C-z"))
 
 ;; Set the session file path
-(setq wg-default-session-file (expand-file-name "workgroups" savefiles-dir))
+(setq wg-session-file (expand-file-name "workgroups" savefiles-dir))
 
 ;; Use faces in the mode-line display
 (setq wg-mode-line-use-faces t)
