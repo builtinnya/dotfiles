@@ -23,7 +23,7 @@ antigen bundle extract
 antigen bundle history
 antigen bundle nyan
 # antigen bundle emacs
-antigen bundle virtualenvwrapper
+# antigen bundle virtualenvwrapper
 
 # Syntax highlighting bundle
 antigen bundle zsh-users/zsh-syntax-highlighting
@@ -92,10 +92,10 @@ fi
 which pyenv > /dev/null && eval "$(pyenv init -)"
 
 # Enable virtualenvwrapper
-export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/Devel
-export VIRTUAL_ENV_DISABLE_PROMPT=yes
-source /usr/local/bin/virtualenvwrapper.sh
+# export WORKON_HOME=$HOME/.virtualenvs
+# export PROJECT_HOME=$HOME/Devel
+# export VIRTUAL_ENV_DISABLE_PROMPT=yes
+# source /usr/local/bin/virtualenvwrapper.sh
 
 # Go
 # export GOPATH=$HOME/go
