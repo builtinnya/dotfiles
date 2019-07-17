@@ -99,6 +99,7 @@ which pyenv > /dev/null && eval "$(pyenv init -)"
 
 # Go
 export GOPATH=$HOME/go
+export GO111MODULE=on
 
 # Initialize jenv
 if which jenv > /dev/null; then eval "$(jenv init -)"; fi
