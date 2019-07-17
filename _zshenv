@@ -71,7 +71,7 @@ export LC_ALL="en_US.UTF-8"
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 # Enable Go Version Manager
-[[ -s "/Users/nya/.gvm/scripts/gvm" ]] && source "/Users/nya/.gvm/scripts/gvm"
+#[[ -s "/Users/nya/.gvm/scripts/gvm" ]] && source "/Users/nya/.gvm/scripts/gvm"
 
 # Initialize asdf
 autoload -Uz compinit && compinit
