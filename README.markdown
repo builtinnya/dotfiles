@@ -2,7 +2,7 @@
 
 Here is my personal [dot-files][] repository.
 I hope it will help you with setting up your environment.
-These settings are mostly tested on Mac OS X.
+These settings are mostly tested on Ubuntu.
 
 [dot-files]: http://en.wikipedia.org/wiki/Dot-file
 
@@ -15,12 +15,12 @@ Clone this repo and run `install.sh` as follows.
 ``` bash
 $ git clone git@github.com:builtinnya/dotfiles.git
 $ cd dotfiles
+$ git submodule update --init
 $ ./install.sh
 ```
 
 Basically, it installs symbolic links to the files whose name starts with `_`
 into the home directory.
-It also installs symbolic links to the directories under `config/`.
 
 Run `install.sh` by mistake? **Don't panic!**
 The script backups the existing dot-files to `filename.df.bak` if any.
@@ -56,10 +56,10 @@ using [Magit][].
 
 ### .tmux.conf
 Settings for [Tmux][], a terminal multiplexer.
-You have to install [Powerline][].
+You have to install [Powerline fonts][].
 
 [Tmux]: http://tmux.sourceforge.net/
-[Powerline]: https://github.com/Lokaltog/powerline
+[Powerline fonts]: https://github.com/powerline/fonts
 
 On Mac OS X, I use [iTerm2][] with Zenburn color scheme from
 [iTerm2-Color-Schemes][].

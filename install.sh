@@ -99,38 +99,16 @@ do
 done
 shift `expr $OPTIND - 1`
 
-config_source="${PWD}/config"
-config_target="${HOME}/.config"
-
 if [ "$1" = "restore" ]
 then
     for df in _*
     do
         unlink_dotfile "${df}"
     done
-
-    # Restore files under ~/.config
-    if [ -d "$config_source" ]
-    then
-        for df in `ls "$config_source"`
-        do
-            unlink_file "${config_source}/${df}" "${config_target}/${df}"
-        done
-    fi
-
     exit
 else
     for df in _*
     do
         link_dotfile "${df}"
     done
-
-    # Install config/ to ~/.config
-    if [ -d "$config_source" ]
-    then
-        for df in `ls "$config_source"`
-        do
-            link_file "${config_source}/${df}" "${config_target}/${df}"
-        done
-    fi
 fi
